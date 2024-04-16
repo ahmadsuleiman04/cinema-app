@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.example.cinema_app.MainController"
+      alignment="TOP_CENTER" spacing="10" stylesheets="@Style.css" id="vbox">
+     <padding>
+         <Insets bottom="10" left="10" right="10"/>
+     </padding>
+
+    <StackPane>
+        <Rectangle height="120" id="toprect" width="600" />
+            <VBox alignment="CENTER" spacing="30">
+
+                <ImageView fx:id="image1" fitWidth="200" fitHeight="40" />
+
+                    <HBox alignment="CENTER" spacing="10" styleClass="hbox">
+                        <Button fx:id="booked" prefWidth="190" text="booked shows" prefHeight="30" onAction="#switchToScene2" />
+                        <Button fx:id="book" prefWidth="190" text="book a show" prefHeight="30" />
+                        <Button fx:id="logOut" prefWidth="190" text="log out" prefHeight="30"  onAction="#switchToLogin"/>
+
+                    </HBox>
+            </VBox>
+
+    </StackPane>
+
+    <GridPane hgap="10" vgap="10" prefHeight="500" alignment="CENTER">
+        <StackPane  GridPane.rowIndex="0" GridPane.columnIndex="0" fx:id="firstStackPane">
+            <Rectangle width="280" height="250" id="rect" arcHeight="20" arcWidth="20"/>
+            <VBox alignment="TOP_CENTER">
+                <Rectangle height="170" width="280"  fx:id="rect1" arcHeight="20" arcWidth="20"/>
+                <Label  fx:id="label1"/>
+                <Button text="movie details" onAction="#switchToScene3" fx:id="button1"/>
+            </VBox>
+        </StackPane>
+        <StackPane  GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="secondStackPane">
+            <Rectangle width="280" height="250" id="rect" arcHeight="20" arcWidth="20"/>
+            <VBox alignment="TOP_CENTER">
+                <Rectangle height="170" width="280"  fx:id="rect2" arcHeight="20" arcWidth="20"/>
+                <Label  fx:id="label2"/>
+                <Button text="movie details" fx:id="button2" onAction="#switchToScene3" />
+            </VBox>
+        </StackPane>
+        <StackPane  GridPane.rowIndex="1" GridPane.columnIndex="0" fx:id="thirdStackPane">
+            <Rectangle width="280" height="250" id="rect" arcHeight="20" arcWidth="20"/>
+            <VBox alignment="TOP_CENTER">
+                <Rectangle height="170" width="280"  fx:id="rect3" arcHeight="20" arcWidth="20"/>
+                <Label  fx:id="label3"/>
+                <Button text="movie details" fx:id="button3" onAction="#switchToScene3"/>
+            </VBox>
+        </StackPane>
+        <StackPane  GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="fourthStackPane">
+            <Rectangle width="280" height="250" id="rect" arcHeight="20" arcWidth="20"/>
+            <VBox alignment="TOP_CENTER">
+                <Rectangle height="170" width="280"  fx:id="rect4" arcHeight="20" arcWidth="20"/>
+                <Label  fx:id="label4"/>
+                <Button text="movie details" fx:id="button4" onAction="#switchToScene3"/>
+            </VBox>
+        </StackPane>
+    </GridPane>
+    <HBox alignment="BOTTOM_CENTER" spacing="10" >
+
+        <Button text="previous" alignment="CENTER" prefHeight="20" prefWidth="100" fx:id="previousPage" onAction="#setPreviousPage" />
+        <Button text="next" alignment="CENTER" prefHeight="20" prefWidth="100" fx:id="nextPage" onAction="#setNextPage" />
+    </HBox>
+</VBox>
+
